@@ -2,6 +2,7 @@
 version: 2
 
 models:
+    - name: dates
     - name: my_first_dbt_model
       description: "A starter dbt model"
       columns:
@@ -19,3 +20,17 @@ models:
             tests:
                 - unique
                 - not_null
+    - name: snowflake_customer_purchases
+      description: "the total purchases for each customer in snowflake sample data"
+      columns:
+          - name: c_custkey
+            tests:
+              - unique
+              - not_null
+    - name: cumulative_orders_by_date
+      description: "daily sales for each day"
+      columns:
+          - name: orderdate
+            tests:
+              - unique
+              - not_null
