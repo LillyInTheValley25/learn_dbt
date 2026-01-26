@@ -2,6 +2,7 @@
 version: 2
 
 models:
+    - name: incremental_time
     - name: dates
     - name: my_first_dbt_model
       description: "A starter dbt model"
