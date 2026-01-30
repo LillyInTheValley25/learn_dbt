@@ -20,6 +20,9 @@ models:
             tests:
                 - unique
                 - not_null
+                - relationships:
+                    field: id
+                    to: ref('my_first_dbt_model')
     - name: snowflake_customer_purchases
       description: "the total purchases for each customer in snowflake sample data"
       columns:
