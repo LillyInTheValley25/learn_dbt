@@ -12,8 +12,6 @@ models:
           tests:
             - accepted_values:
                 values: ['BUILDING', 'AUTOMOBILE', 'MACHINERY', 'HOUSEHOLD', 'FURNITURE']
-            
-    - name: dates
     - name: my_first_dbt_model
       description: "A starter dbt model"
       columns:
