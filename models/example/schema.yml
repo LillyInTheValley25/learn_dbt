@@ -10,7 +10,6 @@ models:
             description: "The primary key for this table"
             tests:
                 - unique
-                - not_null
 
     - name: my_second_dbt_model
       description: "A starter dbt model"
@@ -19,7 +18,6 @@ models:
             description: "The primary key for this table"
             tests:
                 - unique
-                - not_null
     - name: snowflake_customer_purchases
       description: "the total purchases for each customer in snowflake sample data"
       columns:
