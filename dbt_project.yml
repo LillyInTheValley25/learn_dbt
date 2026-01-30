@@ -40,3 +40,11 @@ models:
     # Applies to all files under models/example/
     example:
       +materialized: table
+      post-hook: 
+        - 'grant usage on schema {{this.database}}.{{this.schema}} to role analyst'
+        - 'grant select on {{this}} to role analyst'
+
+on-run-end:
+  - 'grant usage on schema analytics_1.dbt_ndusk to role analyst'
+  - 'grant select on all tables in schema analytics_1.dbt_ndusk to role analyst'
+  - 'grant select on all views in schema analytics_1.dbt_ndusk to role analyst'
