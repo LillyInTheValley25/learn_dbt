@@ -40,6 +40,6 @@ models:
     # Applies to all files under models/example/
     example:
       +materialized: table
-      pre-hook: "insert into dbt_ndusk.audit (model, state, time) values ('{{this.name}}', 'starting model deployment', current_timestamp)"
+      +pre-hook: "insert into dbt_ndusk.audit (model, state, time) values ('{{this.name}}', 'starting model deployment', current_timestamp)"
 on-run-start:
   - "create table if not exists audit (model text, state text, time timestamp_ltz)"
