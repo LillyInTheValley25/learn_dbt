@@ -2,7 +2,16 @@
 version: 2
 
 models:
-    - name: dates
+    - name: playing_with_tests
+      columns:
+        - name: c_custkey
+          tests:
+            - unique
+            - not_null
+        - name: c_mktsegment
+          tests:
+            - accepted_values:
+                values: ['BUILDING', 'AUTOMOBILE', 'MACHINERY', 'HOUSEHOLD', 'FURNITURE']
     - name: my_first_dbt_model
       description: "A starter dbt model"
       columns:
@@ -11,6 +20,9 @@ models:
             tests:
                 - unique
                 - not_null
+                - accepted_values:
+                    values: [1, 2]
+                    quote: false 
 
     - name: my_second_dbt_model
       description: "A starter dbt model"
